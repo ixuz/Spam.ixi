@@ -18,9 +18,6 @@ public class SpamIxiContext extends ConfigurableIxiContext {
         if(!newConfiguration.has(TRANSACTIONS_PER_MINUTE)) {
             throw new IllegalArgumentException(String.format("field '%s' is missing", TRANSACTIONS_PER_MINUTE));
         }
-        if(!(newConfiguration.get(TRANSACTIONS_PER_MINUTE) instanceof Integer)) {
-            throw new IllegalArgumentException(String.format("field '%s' is not an integer", TRANSACTIONS_PER_MINUTE));
-        }
         if(newConfiguration.getInt(TRANSACTIONS_PER_MINUTE) < 0) {
             throw new IllegalArgumentException(String.format("field '%s' cannot be negative", TRANSACTIONS_PER_MINUTE));
         }

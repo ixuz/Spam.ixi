@@ -39,7 +39,7 @@ public class SpamIxi extends IxiModule {
                 synchronized (waiter) {
                     try {
                         if (context.getTransactionsPerMinute() > 0) {
-                            waiter.wait((long) (1000 / (60f / context.getTransactionsPerMinute())));
+                            waiter.wait((long) (1000f * 60f) / context.getTransactionsPerMinute());
                         } else {
                             waiter.wait(1000);
                         }
