@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "name": "Spam.ixi",
+  "main_class": "com.antwik.ixi.SpamIxi",
+  "description": "Basic transaction spammer module.",
+  "repository": "ixuz/Spam.ixi",
+  "gui_port": -1,
+  "supported_versions": ["0.6"]
+}

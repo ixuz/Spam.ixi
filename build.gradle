@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'com.antwik'
+version '1.0'
+
+sourceCompatibility = 1.7
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    compile 'com.github.iotaledger:ict:38ed6375b794755cf7f9f9b39312c4f95ff433cb'
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'com.antwik.ixi.SpamIxi'
+    }
+    baseName = 'spam.ixi'
+    destinationDir = file("$rootDir/")
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}

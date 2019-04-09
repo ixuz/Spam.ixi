@@ -1,0 +1,5 @@
+spam.ixi-*.jar
+*.iml
+.idea
+.gradle
+build
